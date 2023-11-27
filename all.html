@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard - All</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            padding: 15px;
+            color: white;
+            text-align: center;
+            box-shadow: 0px 5px 5px -5px #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #3498db;
+            padding: 10px;
+            box-shadow: 0px 5px 5px -5px #3498db;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .chart-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .chart {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px -3px #bbb;
+            transition: box-shadow 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .chart:hover {
+            box-shadow: 0px 5px 10px -5px #888;
+        }
+
+        .chart-text {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #555;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .filter-section {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .filter-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1;
+            display: none;
+        }
+
+        .filter-section:hover .filter-dropdown {
+            display: block;
+        }
+
+        .filter-item {
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .filter-item:hover {
+            background-color: #f2f2f2;
+        }
+
+        select, .apply-clear-buttons {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Dashboard - All</h1>
+</header>
+
+<nav>
+    <button onclick="location.href='your.html'">Your</button>
+    <button onclick="location.href='all.html'">All</button>
+    <button onclick="location.href='blocked.html'">Blocked</button>
+    <input type="text" placeholder="Search...">
+    <div class="filter-section">
+        <button onclick="toggleFilter()">Filter</button>
+        <div class="filter-dropdown">
+            <div class="filter-item" onclick="changeFilterType('subscription')">Subscription</div>
+            <div class="filter-item" onclick="changeFilterType('burner')">Burner</div>
+            <select id="banks">
+                <option value="bank1">Bank 1</option>
+                <option value="bank2">Bank 2</option>
+                <option value="bank3">Bank 3</option>
+            </select>
+            <div class="apply-clear-buttons">
+                <button onclick="applyFilters()">Apply</button>
+                <button onclick="clearFilters()">Clear</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<section id="content" class="chart-container">
+    <div class="chart">
+        <h2>Linked In</h2>
+        <!-- Your Linked In chart implementation goes here -->
+        <div class="chart-text">(memberfive.budget)</div>
+    </div>
+    <div class="chart">
+        <h2>Marketing Ads</h2>
+        <!-- Your Marketing Ads chart implementation goes here -->
+        <div class="chart-text">(memberfive.budget)</div>
+    </div>
+    <div class="chart">
+        <h2>Offsite Event</h2>
+        <!-- Your Offsite Event chart implementation goes here -->
+        <div class="chart-text">(memberfive.budget)</div>
+    </div>
+    <div class="chart">
+        <h2>Travel Allowance</h2>
+        <!-- Your Travel Allowance chart implementation goes here -->
+        <div class="chart-text">(memberfive.budget)</div>
+    </div>
+    <div class="chart">
+        <h2>AWS Card</h2>
+        <!-- Your AWS Card chart implementation goes here -->
+        <div class="chart-text">(memberfive.budget)</div>
+    </div>
+    <div class="chart">
+        <h2>Netflix</h2>
+        <!-- Your Netflix chart implementation goes here -->
+        <div class="chart-text">(memberfive.budget)</div>
+    </div>
+</section>
+
+<script>
+    function toggleFilter() {
+        const filterDropdown = document.querySelector('.filter-dropdown');
+        filterDropdown.style.display = (filterDropdown.style.display === 'none' || filterDropdown.style.display === '') ? 'block' : 'none';
+    }
+
+    function changeFilterType(type) {
+        // Implement logic to change filter type (subscription/burner)
+        // Update content accordingly
+    }
+
+    function applyFilters() {
+        // Implement logic to apply selected filters
+        // Update content accordingly
+        console.log("Filters Applied!");
+    }
+
+    function clearFilters() {
+        // Implement logic to clear selected filters
+        // Update content accordingly
+        console.log("Filters Cleared!");
+    }
+</script>
+
+</body>
+</html>
